@@ -65,12 +65,12 @@
   ```bash
  adb shell cat /proc/bus/input/devices | awk '/sensor/,/event/ {d=$1; if (/N:/) {split($2,n,"=")}; if(/event/) {split($2,e,"="); print e[2] "\t" n[2];)}}'
   ```
-### print out input event devices with sensor in their names, and change their file permissions
+### Print out input event devices with sensor in their names, and change their file permissions
 
   ```bash
  cat /proc/bus/input/devices | awk '/sensor/,/event/ {d=$1; if (/N:/) {split($2,n,"=")}; if(/event/) {split($2,e,"="); print e[2] "\t" n[2]; system("sudo chmod a+rw /dev/input/" e[2])}}'
   ```
-### update the version info in a Keil project file (be sure to git diff to make sure no extra substitutions)
+### Update the version info in a Keil project file (be sure to git diff to make sure no extra substitutions)
 
   ```bash
  sed -i 's/2 1 0/2 3 0/'  someproject.uvproj 
