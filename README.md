@@ -4,7 +4,7 @@
 ### Split compiler arg string to one options per line by pasting into terminal and hitting cntrl+d
 
 ```bash
- awk '{split($0, opts)} END {system("tput clear"); for (i in opts) print opts[i] }'
+awk '{split($0, opts)} END {system("tput clear"); for (i in opts) print opts[i] }'
   ```
 
 ### Replace windows cr/lf with just lf. Insert a real ^M by typing ,<ctrl+v/-m>
