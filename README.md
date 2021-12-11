@@ -46,7 +46,7 @@ grep accel sensor-data.json | awk 'gsub(/[,:[\]]/ , " ")' | awk '{printf("%s, %s
 ### Convert from hex to a 16bit signed integer and plot
   
 ```bash
- awk '{hexVal="0x" $1; numVal=strtonum(hexVal); if (numVal > 32767) numVal=numVal-65536; print i++ "   " numVal "  " hexVal; }' axu-62.dat  | gnuplot -p  -e "plot '-' with lines;"
+awk '{hexVal="0x" $1; numVal=strtonum(hexVal); if (numVal > 32767) numVal=numVal-65536; print i++ "   " numVal "  " hexVal; }' axu-62.dat  | gnuplot -p  -e "plot '-' with lines;"
 ```
   
 ### Poor mans histogram of the above timestamp deltas (note that there is no binning of data here)
