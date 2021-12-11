@@ -34,7 +34,7 @@ sed 's;\\;/;g'
 ### Convert JSON to CSV thelong way
   
 ```bash
- grep accel sensor-data.json | awk 'gsub(/[,:[\]]/ , " ")' | awk '{printf("%s, %s, %s, %s\n", $2, $4, $5, $6)}' > accel-data.csv
+grep accel sensor-data.json | awk 'gsub(/[,:[\]]/ , " ")' | awk '{printf("%s, %s, %s, %s\n", $2, $4, $5, $6)}' > accel-data.csv
   ```
 
 ### Grab out JSON fields,  compute the delta timestamp, then plot this
