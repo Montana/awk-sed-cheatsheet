@@ -28,8 +28,8 @@
 ### Make dos paths into unix paths
   
 ```bash
- sed 's;\\;/;g'
-  ```
+sed 's;\\;/;g'
+ ```
 
 ### Convert JSON to CSV thelong way
   
