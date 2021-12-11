@@ -55,7 +55,7 @@
  gawk '{gsub(/[,:[\]]/ , " "); if(!lastT) lastT=strtonum($2); dt= strtonum($2) - lastT; lastT=strtonum($2); print dt}' ra.csv | sort -n | uniq -c | gnuplot -p  -e "plot '-' u 2:1 with boxes;"
  ```
   
-### Process data within a delimted section of a file (this process between the lines that contain `GVars1 and `--Funcs`)
+### Process data within a delimted section of a file (this process between the lines that contain `GVars1` and `--Funcs`)
 
   ```bash
  awk '/--- GVars/,/--- Funcs/ {if(! /---/){printf("%s:\t\t %d\n", $1, strtonum($3))} }'
